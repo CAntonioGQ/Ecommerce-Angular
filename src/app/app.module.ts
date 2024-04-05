@@ -8,7 +8,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { SigninComponent } from './components/auth/signin/signin.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { ProductoListComponent } from './components/producto-list/producto-list.component';
+import { ProductoItemComponent } from './components/producto-item/producto-item.component'
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { HttpClientModule } from '@angular/common/http'
     FooterComponent,
     HomeComponent,
     SigninComponent,
-    SignupComponent
+    SignupComponent,
+    ProductoListComponent,
+    ProductoItemComponent
   ],
   imports: [
     BrowserModule,
