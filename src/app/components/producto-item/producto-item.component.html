@@ -1,9 +1,14 @@
-<div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-    <a class="block relative h-48 rounded overflow-hidden">
-      <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/420x260">
-    </a>
-    <div class="mt-4">
-      <h2 class="text-gray-900 title-font text-lg font-medium">{{producto?.nombre}}</h2>
-      <p class="mt-1">${{producto?.precio_venta}}</p>
-    </div>
+<div class="lg:w-4/4 md:w-4/4 p-4 w-full">
+  <a class="block relative h-48 rounded overflow-hidden">
+      <!-- Asegúrate de que la URL de la imagen y el atributo alt estén correctamente formados -->
+      <img alt="ecommerce" class="object-cover object-center w-full h-full block" 
+           [src]="producto ? producto.imageUrl[0] : ''" [alt]="producto?.nombre">
+  </a>
+  <div class="mt-4">
+      <h2 class="text-gray-900 title-font text-lg font-medium">
+        {{ producto?.nombre?.substring(0,20) }} {{ producto && producto.nombre[21]  ? "..." : null }} </h2>
+      <p class="mt-1">${{ producto?.precio_venta || 0 }} <del>${{ (producto?.precio_regular || 0)}}</del>
+      <span class="text-danger mL-3"> {{ producto ? ((producto.precio_regular - producto.precio_venta) / producto.precio_regular | percent) : null }}</span></p>
+
   </div>
+</div>
